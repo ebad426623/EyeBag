@@ -28,12 +28,8 @@ def detect_objects():
     image_path = os.path.join(OUTPUT_DIR, file.filename)
     file.save(image_path)
 
-
-    # Run inference
     results = model(image_path)
 
-
-    # Save the output image with bounding boxes
     output_image_path = os.path.join(OUTPUT_DIR, "output.jpg")
     results[0].save(output_image_path)
 
@@ -41,4 +37,4 @@ def detect_objects():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
